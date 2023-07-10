@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\PlayerController;
+use App\Models\player;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+ 
+
 });
+Route::get(uri:'/player',action:[PlayerController::class,'index'])->name('player.index');
+Route::get(uri:'/player/{player}',action:[PlayerController::class,'show'])->name('player.show');

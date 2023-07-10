@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class player extends Model
 {
     use HasFactory;
+
+    public function walletRelation()
+    {
+        return $this->belongsTo(wallet::class,'walletId');
+    }
 }

@@ -19,7 +19,11 @@ class PlayerResource extends JsonResource
             'name'=>$this->firstName." ".$this->lastName,
             'nationality'=>$this->nationality,
             'expLevel'=>$this->experienceLevel,
-            'numOfSlots'=>$this->slotsNum
+            'numOfSlots'=>$this->slotsNum,
+            'wallet'=>[
+                'currentBalance'=>$this->walletRelation->balanc,
+                'currentGold'=>$this->walletRelation->goldNum
+            ]
         ];
     }
 }

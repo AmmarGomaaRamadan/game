@@ -41,8 +41,12 @@ class PlayerController extends Controller
      */
     public function show($player)
     {
-        $players = player::find($player);
-        return new PlayerResource($players);
+        $targetplayer = player::find($player);
+        if($targetplayer===null)
+        {
+            return ['message'=>"This player dose not Exist in the database"];
+        }
+        return new PlayerResource($targetplayer);
     }
 
     /**
